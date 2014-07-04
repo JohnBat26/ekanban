@@ -26,7 +26,7 @@ class KanbanWorkflowController < ApplicationController
   	@project = params[:project_id]
   	@kanban = params[:kanban_id]
   	flow = params[:flow]
-  	num = flow.size
+  	num = flow.size  if flow
   	flow.each do |f|
   	  from = f[0].to_i
   	  f[1].each do |k,v|

@@ -17,7 +17,7 @@ class AddKanbanTablesOptions < ActiveRecord::Migration
   	change_column :kanban_panes, :name, :string, :limit => 32
   	add_column :kanban_panes, :description, :text, :limit => 256
   	change_column :kanban_panes, :wip_limit_auto, :boolean, :default => true
-  	change_column :kanban_panes, :wip_limit, :boolean, :default => 1, :null => false
+  	#change_column :kanban_panes, :wip_limit, :boolean, :default => 1, :null => false
   	change_column :kanban_panes, :kanban_id, :integer, :null => false
 
   	#table  "kanban_workflows"
@@ -27,6 +27,7 @@ class AddKanbanTablesOptions < ActiveRecord::Migration
   
   def self.down
   	#table "kanbans"
+=begin
   	change_column :kanbans, :name, :string, :limit => 32, :null => false
   	change_column :kanbans, :project_id, :integer, :null => false
   	change_column :kanbans, :tracker_id, :integer, :null => false
@@ -49,5 +50,6 @@ class AddKanbanTablesOptions < ActiveRecord::Migration
   	#table  "kanban_workflows"
   	change_column :kanban_workflows, :check_role, :boolean, :default => false
   	change_column :kanban_workflows, :check_wip_limit, :integer, :default => 1
+=end
   end
 end

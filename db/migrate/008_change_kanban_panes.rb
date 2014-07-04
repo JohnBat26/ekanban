@@ -8,10 +8,12 @@ class ChangeKanbanPanes < ActiveRecord::Migration
   end
   
   def self.down
+=begin
     change_table :kanban_panes do |t|
       t.remove :kanban_state_id
       t.integer :is_user_wip
       t.remove :wip_limit_auto
     end
+=end
   end
 end
